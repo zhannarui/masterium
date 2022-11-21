@@ -1,0 +1,43 @@
+.container{
+    width: 1400px;
+    margin: 0 auto;
+  }
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerTopLogo img {
+  width: 246px;
+  height: 81px;
+}
+
+.shopCartIcon {
+  cursor: pointer;
+}
+
+.header {
+  background: none;
+}
+
+.iconsBox {
+  display: flex;
+  gap: 70px;
+}
+
+.headerBottom {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 27px 0px;
+  margin-top: 28px;
+}
+
+.bg{
+  display: none;
+}
+
+@media (max-width: 480px){
+  .header{
+    display: none;
+  }
+ }

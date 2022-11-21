@@ -1,0 +1,53 @@
+
+.basketPageBox {
+  margin: 32px 20px;
+  padding: 30px 42px;
+  background-color: #e3eaf8;
+}
+
+.basketPageBoxTitle {
+  font-size: 64px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 130px;
+}
+.nullBox {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-size: 30px;
+  align-items: center;
+  margin-bottom: 500px;
+}
+
+.nullBoxLink {
+  border: 1px solid black;
+  width: fit-content;
+  padding: 15px 20px;
+  border-radius: 20px;
+  transition: 0.1s linear;
+}
+
+.nullBoxLink:hover {
+  transform: scale(1.1);
+  transition: 0.1s linear;
+}
+
+.clearButton button {
+  background: none;
+  border: 1px solid black;
+  padding: 15px 20px;
+  font-size: 18px;
+  margin-bottom: 40px;
+  transition: 0.1s linear;
+}
+
+.clearButton button:hover {
+  transform: scale(1.1);
+  transition: 0.1s linear;
+}
+
+.totalPrice{
+  padding-top: 50px;
+  font-size: 24px;
+}

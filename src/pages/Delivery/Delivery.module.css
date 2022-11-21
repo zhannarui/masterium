@@ -1,0 +1,33 @@
+.deliveryContent{
+    margin: 62px 22px 132px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 83px;
+}
+
+.infoBox{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.boxTitle{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+}
+
+.textBox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 25px;
+}
+.textBoxItem{
+    font-size: 20px;
+}
+
+.textBoxItem span{
+    text-transform: uppercase;
+}

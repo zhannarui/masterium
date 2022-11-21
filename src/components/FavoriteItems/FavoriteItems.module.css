@@ -1,0 +1,60 @@
+.itemsBox {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 87px;
+  gap: 70px 63px;
+}
+.itemLink {
+  width: 30%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 23px 24px;
+  position: relative;
+}
+
+.itemImg {
+  width: 100%;
+  height: 349.19px;
+}
+
+.item h2 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  height: 49px;
+  width: 100%;
+}
+
+.item p {
+  background: #afc7d2;
+  width: 100%;
+  padding: 18px 0px;
+}
+
+.deleteFromFavorite {
+  position: absolute;
+  top: 42px;
+  right: 36px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.deleteFromFavorite .crossIcon {
+    transition: .1s linear;
+}
+
+.deleteFromFavorite:hover .crossIcon {
+    transform: scale(1.1);
+    transition: .1s linear;
+    width: 20px;
+    height: 20px;
+}

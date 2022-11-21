@@ -1,0 +1,23 @@
+.aboutUsContent {
+  margin: 55px 0px 125px 0px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.contentTextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 23px;
+  line-height: 30px;
+}
+
+.textBoxItem {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.textBoxItem span {
+  font-weight: 500;
+}
