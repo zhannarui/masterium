@@ -5,6 +5,8 @@ import Items from '../../components/Items'
 import MainHeader from '../../components/MainHeader/MainHeader'
 import s from './Home.module.css'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+import BottomNavbar from '../../BottomNavBar/BottomNavbar'
 
 const Home = (props) => {
   useEffect(() => {
@@ -18,6 +20,9 @@ const Home = (props) => {
     <Categories categories={props.state.categories}/>
     </div>
     <Items items={props.state.items}/>
+    <div className='bottomNavbar'>
+    <BottomNavbar/>
+    </div>
     </div>
   )
 }

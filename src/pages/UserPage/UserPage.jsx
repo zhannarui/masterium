@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import s from './UserPage.module.css'
 import { useEffect } from "react";
+import BottomNavbar from "../../BottomNavBar/BottomNavbar";
 
 const UserPage = () => {
     useEffect(() => {
@@ -32,6 +33,9 @@ const UserPage = () => {
                         <button className={s.button}>Войти</button>
                     </div>
             </div>
+        </div>
+        <div className='bottomNavbar'>
+            <BottomNavbar/>
         </div>
         </div>
     )

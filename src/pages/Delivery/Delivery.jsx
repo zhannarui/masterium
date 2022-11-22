@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import s from './Delivery.module.css';
 import { useEffect } from "react";
+import BottomNavbar from '../../BottomNavBar/BottomNavbar';
 
 const Delivery = () => {
     useEffect(() => {
@@ -31,6 +32,9 @@ const Delivery = () => {
                     <p className={s.textBoxItem}>Номер отслеживания будет отправлен Вам на почту после обработки вашего заказа.</p>
                 </div>
             </div>
+        </div>
+        <div className='bottomNavbar'>
+            <BottomNavbar/>
         </div>
         </div>
     )

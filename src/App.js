@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from 'react-router-dom';
+import BottomNavbar from "./BottomNavBar/BottomNavbar";
 import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
 import MainHeader from "./components/MainHeader/MainHeader";
@@ -687,6 +688,7 @@ const App = () => {
         <Route path='/BasketPage' element={<BasketPage/>}/>
         <Route path='/ProductPage/:id' element={<ProductPage state={state.homePage}/>}/>
         <Route path='/UserPage' element={<UserPage/>}/>
+        <Route path='/registration' element={<UserPage/>}/>
       </Routes>
       <Footer/>
     </div>

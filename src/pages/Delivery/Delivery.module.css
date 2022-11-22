@@ -31,3 +31,12 @@
 .textBoxItem span{
     text-transform: uppercase;
 }
+
+@media (max-width: 480px){
+    .boxTitle{
+        font-size: 30px;
+    }
+    .textBoxItem{
+        font-size: 18px;
+    }
+}

@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import BasketItem from "../../components/BasketItem/BasketItem";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
+import BottomNavbar from "../../BottomNavBar/BottomNavbar";
 
 const BasketPage = observer(() => {
   useEffect(() => {
@@ -36,6 +37,9 @@ const BasketPage = observer(() => {
              </div>
           </div>
         }
+            </div>
+            <div className='bottomNavbar'>
+              <BottomNavbar/>
             </div>
         </div>
 

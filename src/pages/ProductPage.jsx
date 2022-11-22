@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 import favorites from '../store/favorites'
 import basket from '../store/basket'
 import {useEffect} from "react";
+import BottomNavbar from "../BottomNavBar/BottomNavbar";
 
 
 const ProductPage = observer((props) => {
@@ -116,6 +117,9 @@ return(
         {chosenProduct.description}
         </div>
         </div>
+</div>
+<div className='bottomNavbar'>
+    <BottomNavbar/>
 </div>
 </div>
 )

@@ -5,6 +5,7 @@ import FavoriteItems from '../components/FavoriteItems/FavoriteItems';
 import Header from '../components/Header/Header'
 import favorites from '../store/favorites'
 import { useEffect } from 'react';
+import BottomNavbar from '../BottomNavBar/BottomNavbar';
 
 const FavoritePage = observer(() => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const FavoritePage = observer(() => {
              <FavoriteItems/>
           </div>
         }
+        </div>
+        <div className='bottomNavbar'>
+          <BottomNavbar/>
         </div>
       </div>
   )

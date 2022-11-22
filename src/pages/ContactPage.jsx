@@ -3,6 +3,7 @@ import ContactItems from "../components/ContactItems";
 import Header from "../components/Header/Header";
 import photo from '../img/contacts-img.png'
 import { useEffect } from "react";
+import BottomNavbar from "../BottomNavBar/BottomNavbar";
 
 const ContactPage = (props) => {
     useEffect(() => {
@@ -24,7 +25,9 @@ const ContactPage = (props) => {
             <div className="content__img-block">
              <img src={ photo } alt="" />   
             </div>
-
+        </div>
+        <div className='bottomNavbar'>
+            <BottomNavbar/>
         </div>
         </div>
     )

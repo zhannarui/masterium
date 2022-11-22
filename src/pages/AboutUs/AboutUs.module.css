@@ -21,3 +21,23 @@
 .textBoxItem span {
   font-weight: 500;
 }
+
+@media (max-width: 480px){
+  .aboutUsContent{
+    flex-direction: column;
+  }
+  .contentImg{
+    max-width: 480px;
+  }
+  .contentImg img{
+    width: 100%;
+  }
+  .contentTextBox{
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .textBoxItem{
+    font-size: 18px;
+  }
+}

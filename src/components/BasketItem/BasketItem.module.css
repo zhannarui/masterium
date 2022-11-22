@@ -64,3 +64,16 @@
   width: 21px;
   height: 21px;
 }
+
+@media (max-width: 480px){
+  .item{
+    flex-direction: column;
+    padding: 40px 10px;
+    gap: 30px;
+  }
+  .deleteFromBasket{
+    top: 15px;
+    right: 10px;
+
+  }
+}

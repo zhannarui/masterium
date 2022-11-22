@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import s from './AboutUs.module.css'
 import photo from '../../img/aboutUs-img.png'
 import { useEffect } from "react";
+import BottomNavbar from '../../BottomNavBar/BottomNavbar';
 const AboutUs = () => {
     useEffect(() => {
         document.title = "О нас | Masterium"
@@ -20,6 +21,9 @@ const AboutUs = () => {
             <div className={s.contentImg}>
                 <img src={ photo } alt="" />
             </div>
+        </div>
+        <div className='bottomNavbar'>
+            <BottomNavbar/>
         </div>
         </div>
     )

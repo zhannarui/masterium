@@ -1,7 +1,7 @@
 
 .basketPageBox {
   margin: 32px 20px;
-  padding: 30px 42px;
+  padding: 30px 20px;
   background-color: #e3eaf8;
 }
 
@@ -50,4 +50,24 @@
 .totalPrice{
   padding-top: 50px;
   font-size: 24px;
+}
+
+@media (max-width: 480px){
+  .basketPageBoxTitle{
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .clearButton{
+    padding:  0px 54px;
+  }
+  .basketPageBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nullBox{
+    font-size: 24px;
+    text-align: center;
+  }
 }
