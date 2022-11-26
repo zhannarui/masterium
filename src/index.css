@@ -290,8 +290,11 @@ body {
   width: 21px;
   height: 21px;
 }
+.colorsImg{
+  width: 96px;
+}
 .colorsImg img{
-width: 96px;
+width: 100%;
 border: 1px solid white;
 }
 .colorsImg img:hover{
@@ -312,6 +315,13 @@ border: 1px solid white;
 }
 .bottomNavbar{
   display: none;
+}
+.colorsBox a{
+  border: 1px solid white;
+  padding: 2px;
+}
+.colorsBox a.active .colorsImg img{
+  border: 1px solid #8bacef;
 }
 @media (max-width: 480px){  
   .main__container{

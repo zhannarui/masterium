@@ -27,7 +27,6 @@ const UserPage = () => {
                 </div>
                 </form>
                 <p className={s.question}>Нет аккаунта? <NavLink
-                        style={{color: '#646C54'}}
                         to='/registration'> Зарегистрируйтесь</NavLink></p>
                     <div className={s.butt}>
                         <button className={s.button}>Войти</button>

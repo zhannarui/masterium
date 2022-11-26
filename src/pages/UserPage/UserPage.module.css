@@ -16,8 +16,7 @@
 .formContainer{
     padding: 50px;
     border-radius: 50px;
-    backdrop-filter: blur(5px);
-    
+    backdrop-filter: blur(5px); 
 }
 .formContainer,
 .form{
@@ -75,4 +74,20 @@
 .button:hover{
     transform: scale(1.1);
     transition: 0.1s linear;
+}
+.question{
+    color: #394357;
+}
+
+@media (max-width: 480px){
+    .formContainer{
+        padding: 0;
+        max-width: 480px;
+    }
+    .container{
+        background-position: 26% 50%;
+    }
+    .input{
+        width: fit-content;
+    }
 }

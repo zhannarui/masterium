@@ -20,6 +20,18 @@ let [count, setCount] = useState(1);
 let colors = chosenProduct.colors;
 let [color, setColor] = useState('');
 
+if (color == '') {
+    let id = chosenProduct.id;
+    let i = chosenProduct.colors.length;
+    while (i--)
+    {
+        console.log(i);
+        if (chosenProduct.colors[i].productId == id){
+            color = chosenProduct.colors[i].name;
+            break;
+        }
+    }
+}
 
 useEffect(() => {
     window.scrollTo(0, 0);
