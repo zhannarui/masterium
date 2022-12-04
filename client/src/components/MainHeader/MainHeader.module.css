@@ -1,0 +1,93 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerTopLogo img {
+  width: 246px;
+  height: 81px;
+}
+.userIcon,
+.favoriteIcon,
+.shopCartIcon{
+  width: 25px;
+  height: 25px;
+}
+.shopCartIcon {
+  cursor: pointer;
+}
+
+.header {
+  background: url("../../img/header_bg.png") no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+.iconsBox {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+.headerBottom {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 27px 0px;
+  margin-top: 28px;
+}
+
+.logOut__button{
+  border: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.1s linear;
+  background-color: unset;
+  text-transform: uppercase;
+}
+.logOut__button:hover{
+  transform: scale(1.1);
+  transition: 0.1s linear;
+}
+@media (min-width: 786px) {
+  .burgerWrap {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .container,
+  .headerBottom {
+    display: none;
+  }
+  .header {
+    background: none;
+    height: 0;
+    margin-bottom: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+  }
+  .burgerWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    background-color: white;
+    height: 50px;
+    padding: 10px 10px 0px 10px;
+  }
+  .burgerWrap .icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+  }
+  .headerTopLogo {
+    width: 150px;
+  }
+  .headerTopLogo img {
+    width: 100%;
+    height: unset;
+  }
+}

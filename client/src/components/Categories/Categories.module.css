@@ -1,0 +1,31 @@
+.categories__box {
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .categories__item {
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 500ms ease;
+  }
+  .categories__item:hover {
+    background: #afc7d2;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .main__container {
+    width: 1324px;
+    margin: 0 auto;
+  }
+
+.active{
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 500ms ease;
+    background: #afc7d2;
+    transform: scale(1.1);
+    cursor: pointer;
+}

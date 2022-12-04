@@ -1,0 +1,93 @@
+.container{
+    padding: 50px 0px 100px 0px;
+    background: url("../../img/header_bg.png") no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+.container,
+.formContainer,
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formContainer{
+    padding: 50px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px); 
+}
+.formContainer,
+.form{
+    gap: 70px;
+}
+.title{
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+.inputGroup {
+  position: relative;
+}
+
+.input {
+    width: 400px;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.userLabel {
+  position: absolute;
+  left: 15px;
+  color: black;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input:focus{
+    outline: none;
+    border: 1.5px solid #394357;
+}
+.input:focus ~ label {
+    transform: translateY(-50%) scale(0.8);
+    backdrop-filter: blur(5px);
+    padding: 0 .2em;
+    color: black;
+}
+
+.button{
+    text-transform: uppercase;
+    border: 1px solid #9e9e9e;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    transition: 0.1s linear;
+}
+.question{
+    color: #394357;
+}
+
+@media (max-width: 480px){
+    .formContainer{
+        padding: 0;
+        max-width: 480px;
+    }
+    .container{
+        background-position: 26% 50%;
+    }
+    .input{
+        width: fit-content;
+    }
+}
