@@ -19,7 +19,29 @@ class ColorController{
     }
 
     async getAll (req, res) {
-        const colors = await Colors.findAll()
+        let {itemId} = req.query
+        let colors;
+        if(!itemId){
+            colors = await Colors.findAll()
+        }
+        if(itemId == 1){
+            colors = await Colors.findAll({where: {itemId: 1}})
+        }
+        if(itemId == 2){
+            colors = await Colors.findAll({where: {itemId: 2}})
+        }
+        if(itemId == 3){
+            colors = await Colors.findAll({where: {itemId: 3}})
+        }
+        if(itemId == 4){
+            colors = await Colors.findAll({where: {itemId: 4}})
+        }
+        if(itemId == 5){
+            colors = await Colors.findAll({where: {itemId: 5}})
+        }
+        if(itemId == 6){
+            colors = await Colors.findAll({where: {itemId: 6}})
+        }
         return res.json(colors)
     }
 }

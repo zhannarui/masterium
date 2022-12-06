@@ -62,7 +62,7 @@ FavoritesItem.belongsTo(Favorites)
 Category.hasMany(Item)
 Item.belongsTo(Category)
 
-Item.hasMany(Colors)
+Item.hasMany(Colors, {as: 'colors'})
 Colors.belongsTo(Item)
 
 Item.hasMany(BasketItem)

@@ -1,10 +1,12 @@
+import AboutUsPage from "./pages/AboutUsPage/AboutUsPage"
 import Auth from "./pages/AuthPage/Auth"
 import BasketPage from "./pages/BasketPage"
 import ContactPage from "./pages/ContactPage/ContactPage"
+import DeliveryPage from "./pages/DeliveryPage/DeliveryPage"
 import FavoritePage from "./pages/FavoritePage"
 import Home from "./pages/HomePage/Home"
 import ProductPage from "./pages/ProductPage/ProductPage"
-import { BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER } from "./utils/consts"
+import { ABOUTUSPAGE_ROUTER, BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER } from "./utils/consts"
 
 export const authRoutes = [
 {
@@ -37,6 +39,14 @@ export const publicRoutes = [
     {
         path: CONTACTPAGE_ROUTER,
         Component: ContactPage,
+    },
+    {
+        path: ABOUTUSPAGE_ROUTER,
+        Component: AboutUsPage,
+    },
+    {
+        path: DELIVERYPAGE_ROUTER,
+        Component: DeliveryPage,
     }
 
 ]

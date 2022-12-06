@@ -15,3 +15,9 @@ export const getOneItem = async (id) => {
     const {data} = await $host.get('api/item/' + id)
     return data
 }
+
+export const getColors = async (itemId) => {
+    const {data} = await $host.get('api/color', {params: {itemId}})
+    return data
+}
+

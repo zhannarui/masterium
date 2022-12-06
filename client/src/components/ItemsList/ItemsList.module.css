@@ -9,3 +9,14 @@
     margin-bottom: 87px;
     gap: 70px 63px;
   }
+
+  @media (max-width: 480px) {
+    .items__box {
+      grid-template-columns: repeat(1, 1fr);
+      width: 90%;
+      margin: 0 auto;
+    }
+    .main__container{
+      width: fit-content;
+    }
+  }

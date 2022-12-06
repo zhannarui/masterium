@@ -4,6 +4,7 @@ import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { Context } from "..";
 import { authRoutes, publicRoutes } from "../routes";
 import { HOME_ROUTER } from "../utils/consts";
+import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import MainHeader from "./MainHeader/MainHeader";
 const AppRouter = () => {
@@ -22,6 +23,7 @@ const AppRouter = () => {
             )}
              <Route path='*' element={<Navigate to={HOME_ROUTER}/>} />
         </Routes>
+        <Footer/>
         </div>
     )
 }

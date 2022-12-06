@@ -7,8 +7,13 @@ import logo from '../../img/logo.svg'
 import { HOME_ROUTER, REGISTRATION_ROUTER } from '../../utils/consts';
 import Navbar from '../Navbar/Navbar'
 import s from './MainHeader.module.css'
+import { AiOutlineClose } from "react-icons/ai";
+import { IoMenuSharp } from "react-icons/io5";
+import MenuBurger from "../MenuBurger/MenuBurger";
+import { useState } from "react";
 
 const MainHeader = () => {
+  const [menuActive, setMenuActive] = useState(false);
   const {user} = useContext(Context)
   const navigate = useNavigate()
   const logOut = () => {
@@ -41,6 +46,25 @@ const MainHeader = () => {
         <div className={s.headerBottom}>
         <Navbar/>
         </div>
+        <div className={s.burgerWrap}>
+        <div className={s.headerTopLogo}>
+          <NavLink to="/" className={s.headerTopLogo}>
+            <img src={logo}></img>
+          </NavLink>
+        </div>
+        {menuActive ? (
+          <AiOutlineClose
+            className={s.icon}
+            onClick={() => setMenuActive(!menuActive)}
+          />
+        ) : (
+          <IoMenuSharp
+            className={s.icon}
+            onClick={() => setMenuActive(!menuActive)}
+          />
+        )}
+      </div>
+      <MenuBurger menuActive={menuActive} setMenuActive={setMenuActive} />
 </header>
   )
 }

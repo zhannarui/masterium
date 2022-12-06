@@ -1,68 +1,68 @@
 .content {
-    width: 1440px;
-    margin: 0 auto;
-    padding: 54px 0px 100px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .text__block {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    padding-left: 53px;
-  }
-  .title {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    align-items: center;
-  }
-  .title h1 {
-    font-size: 64px;
-    font-weight: 400;
-  }
-  
-  .title h3 {
-    text-align: center;
-    width: 644px;
-    font-size: 24px;
-    font-weight: 300;
-  }
+  width: 1440px;
+  margin: 0 auto;
+  padding: 54px 0px 100px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text__block {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-left: 53px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+}
+.title h1 {
+  font-size: 64px;
+  font-weight: 400;
+}
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .item__title {
-    font-size: 24px;
-    font-weight: 300;
-  }
-  
-  .item__title::before {
-    content: "—";
-    padding-right: 5px;
-  }
-  
-  .item__textBox {
-    display: flex;
-    align-items: center;
-    gap: 23px;
-  }
-  .item__textBox img {
-    width: 32px;
-  }
-  .item__textBox a,
-  .item__textBox span {
-    font-size: 24px;
-    font-weight: 300;
-  }
+.title h3 {
+  text-align: center;
+  width: 644px;
+  font-size: 24px;
+  font-weight: 300;
+}
 
-  .img__block{
-    margin-top: 50px;
-    max-width: 480px;
-  }
-  .img__block img{
-    width: 100%;
-  }
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.item__title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.item__title::before {
+  content: "—";
+  padding-right: 5px;
+}
+
+.item__textBox {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+.item__textBox img {
+  width: 32px;
+}
+.item__textBox a,
+.item__textBox span {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.img__block {
+  margin-top: 50px;
+  max-width: 480px;
+}
+.img__block img {
+  width: 100%;
+}

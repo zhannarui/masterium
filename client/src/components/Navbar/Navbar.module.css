@@ -10,14 +10,14 @@ a{
   gap: 110px;
 }
 
-.nav a {
+.nav .link {
   display: inline-block;
   position: relative;
   color: black;
   font-size: 24px;
   padding: 10px;
 }
-.nav a:after {
+.nav .link:after {
   display: block;
   content: "";
   background-color: black;
@@ -32,8 +32,15 @@ a{
   -moz-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.nav a:hover:after,
-.nav a:focus:after {
+.active {
+  display: inline-block;
+  position: relative;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 24px;
+  padding: 10px;
+}
+.nav .link:hover:after,
+.nav .link:focus:after {
   width: 100%;
   outline: none;
 }
@@ -44,7 +51,7 @@ a{
     gap: 30px;
     text-align: center;
   }
-  .nav a {
+  .nav .link {
     font-weight: 300;
   }
 }

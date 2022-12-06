@@ -5,6 +5,7 @@ export default class ProductStore{
         this._categories = []
         this._items = []
         this._selectedCategory = {}
+        this.__colors = []
         makeAutoObservable(this)
     }
 
@@ -18,6 +19,14 @@ export default class ProductStore{
 
     setSelectedCategory(category){
         this._selectedCategory = category
+    }
+
+    setColors(color) {
+        this.__colors = color
+    }
+
+    get colors (){
+        return this.__colors
     }
 
     get categories(){

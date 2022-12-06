@@ -1,0 +1,25 @@
+.content {
+    width: 1440px;
+    margin: 0 auto;
+  padding: 55px 0px 125px 0px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.text__box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 23px;
+  line-height: 30px;
+}
+
+.item {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.item span {
+  font-weight: 500;
+}
