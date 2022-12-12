@@ -4,7 +4,7 @@ import { IoCartOutline, IoHeartOutline, IoPersonOutline} from "react-icons/io5";
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Context } from '../..';
 import logo from '../../img/logo.svg'
-import { HOME_ROUTER, REGISTRATION_ROUTER } from '../../utils/consts';
+import { BASKETPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, REGISTRATION_ROUTER, USERPAGE_ROUTER } from '../../utils/consts';
 import Navbar from '../Navbar/Navbar'
 import s from './MainHeader.module.css'
 import { AiOutlineClose } from "react-icons/ai";
@@ -29,16 +29,16 @@ const MainHeader = () => {
                <img src={ logo }></img>
         </NavLink>
         {  user.isAuth ?
-                <div className={s.iconsBox}>
-            <NavLink to='#'><IoPersonOutline className={s.userIcon}/></NavLink>
-            <NavLink to='/BasketPage'><IoCartOutline className={s.shopCartIcon}/></NavLink>
-            <NavLink to='/FavoritePage'><IoHeartOutline className={s.favoriteIcon}/></NavLink>
+            <div className={s.iconsBox}>
+            <NavLink to={USERPAGE_ROUTER}><IoPersonOutline className={s.userIcon}/></NavLink>
+            <NavLink to={BASKETPAGE_ROUTER}><IoCartOutline className={s.shopCartIcon}/></NavLink>
+            <NavLink to={FAVORITEPAGE_ROUTER}><IoHeartOutline className={s.favoriteIcon}/></NavLink>
             <button className={s.logOut__button} onClick={()=> logOut()}>Выйти</button>
             </div>
             :
             <div className={s.iconsBox}>
             <NavLink to={REGISTRATION_ROUTER}><IoPersonOutline className={s.userIcon}/></NavLink>
-            <NavLink to='/BasketPage'><IoCartOutline className={s.shopCartIcon}/></NavLink>
+            <NavLink to={BASKETPAGE_ROUTER}><IoCartOutline className={s.shopCartIcon}/></NavLink>
             </div>
           }
         </div>

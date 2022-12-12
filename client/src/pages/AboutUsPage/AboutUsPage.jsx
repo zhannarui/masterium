@@ -1,10 +1,12 @@
 import React from "react";
 import s from './AboutUsPage.module.css'
 import img from '../../img/aboutUs-img.png'
+import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 
 
 const AboutUsPage = () => {
     return (
+        <div>
         <div className={s.content}>
             <div className={s.text__box}>
                 <p className={s.item}><span>Masterium</span> - это развивающие игрушки, сделанные с душой.</p>
@@ -13,6 +15,10 @@ const AboutUsPage = () => {
             </div>
             <div className={s.img}>
                 <img src={img} alt="" />
+            </div>
+        </div>
+        <div className={s.bottomNavbar}>
+                <BottomNavbar/>
             </div>
         </div>
     )

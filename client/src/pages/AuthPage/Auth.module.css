@@ -78,8 +78,14 @@
 .question{
     color: #394357;
 }
-
+.bottomNavbar{
+    display: none;
+  }
 @media (max-width: 480px){
+    .bottomNavbar{
+        display: block;
+        max-width: 480px;
+      }
     .formContainer{
         padding: 0;
         max-width: 480px;

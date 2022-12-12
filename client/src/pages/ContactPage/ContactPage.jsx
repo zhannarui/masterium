@@ -5,9 +5,11 @@ import mailIcon from '../../img/mail.svg'
 import telegramIcon from '../../img/telegram.svg'
 import whatsAppIcon from '../../img/WhatsApp.svg'
 import mainImg from '../../img/contacts-img.png'
+import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 
 const ContactPage = () => {
     return (
+        <div>
         <div className={s.content}>
             <div className={s.text__block}>
                 <div className={s.title}>
@@ -18,8 +20,7 @@ const ContactPage = () => {
                     <p className={s.item__title}>по телефону</p>
                     <div className={s.item__textBox}>
                         <img src={phoneIcon} alt="" />
-                        <a href="tel:+79215557615">+7 (921) 555-76-15</a>
-                        <span>с 10:00 до 18:00 ежедневно;</span>
+                        <a href="tel:+79215557615">+7 (921) 555-76-15 с 10:00 до 18:00 ежедневно;</a>
                     </div>
                 </div>
                 <div className={s.item}>
@@ -48,6 +49,10 @@ const ContactPage = () => {
                 <img src={mainImg} alt="" />
             </div>
 
+        </div>
+        <div className={s.bottomNavbar}>
+                <BottomNavbar/>
+            </div>
         </div>
     )
 }

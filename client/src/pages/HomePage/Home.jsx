@@ -6,6 +6,7 @@ import { Context } from "../..";
 import Categories from "../../components/Categories/Categories";
 import ItemsList from "../../components/ItemsList/ItemsList";
 import { getCategoties, getItems } from "../../http/itemAPI";
+import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 import s from './Home.module.css'
 
 const Home = observer(() =>{
@@ -19,7 +20,6 @@ const Home = observer(() =>{
     useEffect(() => {
         getItems(item.selectedCategory.id).then(data => 
             item.setItems(data))
-            console.log(item.selectedCategory)
     }, [item.selectedCategory])
 
     return(
@@ -29,6 +29,9 @@ const Home = observer(() =>{
             </div>
             <div className={s.items__box}>
                 <ItemsList/>
+            </div>
+            <div className={s.bottomNavbar}>
+                <BottomNavbar/>
             </div>
         </div>
     )

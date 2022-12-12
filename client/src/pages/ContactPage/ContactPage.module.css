@@ -53,8 +53,7 @@
 .item__textBox img {
   width: 32px;
 }
-.item__textBox a,
-.item__textBox span {
+.item__textBox a {
   font-size: 24px;
   font-weight: 300;
 }
@@ -65,4 +64,47 @@
 }
 .img__block img {
   width: 100%;
+}
+.bottomNavbar{
+  display: none;
+}
+@media (max-width: 480px){
+  .bottomNavbar{
+    display: block;
+    max-width: 480px;
+  }
+  .content{
+    width: unset;
+    flex-direction: column;
+    max-width: 480px;
+  }
+  .title h1{
+    font-size: 36px;
+  }
+  .img__block{
+    margin-top: 50px;
+    max-width: 480px;
+  }
+  .img__block img{
+    width: 100%;
+  }
+  .title h3{
+    width: 100%;
+  }
+  .text__block{
+    padding-left: 0;
+    gap: 35px;
+  }
+  .item .item__title{
+    font-size: 18px;
+  }
+  .item__textBox img{
+    width: 20px;
+  }
+  .item__textBox a{
+    font-size: 18px;
+  }
+  .item{
+    padding: 0 20px;
+  }
 }

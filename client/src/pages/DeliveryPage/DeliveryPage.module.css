@@ -40,3 +40,23 @@
     padding: 0 20px;
   }
 }
+.bottomNavbar{
+  display: none;
+}
+@media (max-width: 480px){
+  .bottomNavbar{
+    display: block;
+    max-width: 480px;
+  }
+}
+@media (max-width: 480px){
+  .content{
+    width: unset;
+  }
+  .title{
+      font-size: 30px;
+  }
+  .item{
+      font-size: 18px;
+  }
+}

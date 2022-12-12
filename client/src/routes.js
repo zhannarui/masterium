@@ -6,7 +6,8 @@ import DeliveryPage from "./pages/DeliveryPage/DeliveryPage"
 import FavoritePage from "./pages/FavoritePage"
 import Home from "./pages/HomePage/Home"
 import ProductPage from "./pages/ProductPage/ProductPage"
-import { ABOUTUSPAGE_ROUTER, BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER } from "./utils/consts"
+import UserPage from "./pages/UserPage/UserPage"
+import { ABOUTUSPAGE_ROUTER, BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER, USERPAGE_ROUTER } from "./utils/consts"
 
 export const authRoutes = [
 {
@@ -47,6 +48,10 @@ export const publicRoutes = [
     {
         path: DELIVERYPAGE_ROUTER,
         Component: DeliveryPage,
+    },
+    {
+        path: USERPAGE_ROUTER,
+        Component: UserPage,
     }
 
 ]

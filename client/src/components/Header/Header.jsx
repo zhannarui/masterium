@@ -9,7 +9,7 @@ import {
   IoHeartOutline,
   IoPersonOutline,
 } from "react-icons/io5";
-import { HOME_ROUTER, REGISTRATION_ROUTER } from "../../utils/consts";
+import { BASKETPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, REGISTRATION_ROUTER, USERPAGE_ROUTER } from "../../utils/consts";
 import { useContext } from "react";
 import { Context } from "../..";
 import { AiOutlineClose } from "react-icons/ai";
@@ -35,13 +35,13 @@ const Header = observer(() => {
           </NavLink>
           {user.isAuth ? (
             <div className={s.iconsBox}>
-              <NavLink to="#">
+              <NavLink to={USERPAGE_ROUTER}>
                 <IoPersonOutline className={s.userIcon} />
               </NavLink>
-              <NavLink to="/FavoritePage">
+              <NavLink to={FAVORITEPAGE_ROUTER}>
                 <IoHeartOutline className={s.favoriteIcon} />
               </NavLink>
-              <NavLink to="/BasketPage">
+              <NavLink to={BASKETPAGE_ROUTER}>
                 <IoCartOutline className={s.shopCartIcon} />
               </NavLink>
               <button className={s.logOut__button} onClick={() => logOut()}>
@@ -53,7 +53,7 @@ const Header = observer(() => {
               <NavLink to={REGISTRATION_ROUTER}>
                 <IoPersonOutline className={s.userIcon} />
               </NavLink>
-              <NavLink to="/BasketPage">
+              <NavLink to={BASKETPAGE_ROUTER}>
                 <IoCartOutline className={s.shopCartIcon} />
               </NavLink>
             </div>

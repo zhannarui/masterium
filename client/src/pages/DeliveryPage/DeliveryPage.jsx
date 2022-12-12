@@ -1,8 +1,10 @@
 import React from "react";
+import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 import s from './DeliveryPage.module.css'
 
 const DeliveryPage = () => {
     return (
+        <div>
         <div className={s.content}>
             <div className={s.info__box}>
                 <h1 className={s.title}>Как оплатить заказ</h1>
@@ -22,6 +24,10 @@ const DeliveryPage = () => {
                     <p className={s.item}>Если сумма заказа больше или равна 5000 рублей, мы бесплатно отправим Ваш заказ Почтой России или доставим до ближайшего пункта выдачи заказов СДЕК.</p>
                     <p className={s.item}>Номер отслеживания будет отправлен Вам на почту после обработки вашего заказа.</p>
                 </div>
+            </div>
+        </div>
+        <div className={s.bottomNavbar}>
+                <BottomNavbar/>
             </div>
         </div>
     )

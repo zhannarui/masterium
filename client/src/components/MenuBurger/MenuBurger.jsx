@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from './MenuBurger.module.css'
 import logo from '../../img/logo.svg'
+import { ABOUTUSPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, HOME_ROUTER } from "../../utils/consts";
 
 const MenuBurger = (props) =>{
     return(
@@ -12,16 +13,16 @@ const MenuBurger = (props) =>{
                 <ul>
                     <li><NavLink onClick={() => {
                         props.setMenuActive(!props.menuActive)
-                    }} to='/'>Каталог</NavLink></li>
+                    }} to={HOME_ROUTER}>Каталог</NavLink></li>
                     <li><NavLink onClick={() => {
                             props.setMenuActive(!props.menuActive)
-                    }} to='/Contact'>Контакты</NavLink></li>
+                    }} to={CONTACTPAGE_ROUTER}>Контакты</NavLink></li>
                     <li><NavLink onClick={() => {
                         props.setMenuActive(!props.menuActive)
-                    }} to='/AboutUs'>О нас</NavLink></li>
+                    }} to={ABOUTUSPAGE_ROUTER}>О нас</NavLink></li>
                     <li><NavLink onClick={() => {
                          props.setMenuActive(!props.menuActive)
-                    }} to='/Delivery'>Доставка</NavLink></li>
+                    }} to={DELIVERYPAGE_ROUTER}>Доставка</NavLink></li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,9 @@
+.bottomNavbar{
+    display: none;
+  }
+  @media (max-width: 480px){
+    .bottomNavbar{
+      display: block;
+      max-width: 480px;
+    }
+  }

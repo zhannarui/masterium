@@ -23,3 +23,31 @@
 .item span {
   font-weight: 500;
 }
+.bottomNavbar{
+  display: none;
+}
+
+@media (max-width: 480px){
+  .bottomNavbar{
+    display: block;
+    max-width: 480px;
+  }
+  .content{
+    width: unset;
+    flex-direction: column;
+  }
+  .img{
+    max-width: 480px;
+  }
+  .img img{
+    width: 100%;
+  }
+  .text__box{
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .item{
+    font-size: 18px;
+  }
+}

@@ -1,12 +1,12 @@
+import { getColors, getOneItem } from "../../http/itemAPI";
 import { observer } from "mobx-react-lite";
 import React from "react";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { IoHeartOutline } from "react-icons/io5";
+import { IoCompassOutline, IoHeartOutline } from "react-icons/io5";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Context } from "../..";
-import { getColors, getOneItem } from "../../http/itemAPI";
 import { BASKETPAGE_ROUTER } from "../../utils/consts";
 import s from "./ProductPage.module.css";
 
@@ -14,10 +14,12 @@ const ProductPage = observer(() => {
   const { item } = useContext(Context);
   const [items, setItem] = useState({ colors: [] });
   const [onBaketClicked, setOnBasketClicked] = useState(false);
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(1);
   const navigate = useNavigate();
   const { id } = useParams();
   let [color, setColor] = useState("");
+  let [img, setIMG] = useState("");
+  let [clicked, setIsClicked] = useState(false);
   useEffect(() => {
     getOneItem(id).then((data) => setItem(data));
     getColors(id).then((data) => item.setColors(data));
@@ -29,7 +31,19 @@ const ProductPage = observer(() => {
       </div>
       <div className={s.content}>
         <div className={s.content__img}>
-          <img src={"http://localhost:5000/" + items.img} alt={items.title} />
+          {clicked ? (
+            <img
+              className={s.mainIMG}
+              src={"http://localhost:5000/" + img}
+              alt={items.title}
+            />
+          ) : (
+            <img
+              className={s.mainIMG}
+              src={"http://localhost:5000/" + items.img}
+              alt={items.title}
+            />
+          )}
         </div>
         <div className={s.content__info}>
           <div className={s.info__top}>
@@ -48,7 +62,11 @@ const ProductPage = observer(() => {
                   <div
                     className={s.colors__img}
                     key={item.key}
-                    onClick={() => setColor(item.name)}
+                    onClick={() => {
+                      setColor(item.name);
+                      setIMG(item.img);
+                      setIsClicked(true);
+                    }}
                   >
                     <img src={"http://localhost:5000/" + item.img}></img>
                   </div>
@@ -84,7 +102,10 @@ const ProductPage = observer(() => {
             ) : (
               <button
                 className={s.button}
-                onClick={() => setOnBasketClicked(true)}
+                onClick={() => {
+                  setOnBasketClicked(true);
+                //   $host.post('api/user/basketItem', {count, })
+                }}
               >
                 В корзину
               </button>
@@ -94,7 +115,8 @@ const ProductPage = observer(() => {
                 className={s.button}
                 onClick={() => navigate(BASKETPAGE_ROUTER)}
               >
-                Оформить заказ
+                Оформить <br />
+                заказ
               </button>
             ) : (
               <></>

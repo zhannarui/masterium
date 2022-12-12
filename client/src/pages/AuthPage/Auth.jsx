@@ -7,6 +7,7 @@ import { login, registration } from "../../http/userAPI";
 import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../..";
+import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 
 const  Auth = observer(() => {
     const {user} = useContext(Context)
@@ -21,21 +22,21 @@ const  Auth = observer(() => {
 
     const click = async () => {
         try {
-            let data
-            if(isLogin){
-                data =  login(email, password)
-            } else{
-                data =  registration(name, surname, email, password)
-            }     
+            let data;
+            if (isLogin) {
+                data = await login(email, password);
+            } else {
+                data = await registration(name,surname,email, password);
+            }
             user.setUser(user)
             user.setIsAuth(true)
-            navigate(HOME_ROUTER)
-        } catch (error) {
-            alert(error.response.data.message)
+           navigate(HOME_ROUTER)
+        } catch (e) {
+            alert(e.response.data.message)
         }
     }
-
     return(
+        <div>
         <div className={s.container}>
             {
                 isLogin ? 
@@ -80,6 +81,10 @@ const  Auth = observer(() => {
             </div>
             }
             
+        </div>
+        <div className={s.bottomNavbar}>
+                <BottomNavbar/>
+            </div>
         </div>
     )
 })
