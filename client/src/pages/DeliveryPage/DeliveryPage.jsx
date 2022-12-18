@@ -1,8 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import BottomNavbar from "../../components/BottomNavBar/BottomNavbar";
 import s from './DeliveryPage.module.css'
 
 const DeliveryPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <div>
         <div className={s.content}>

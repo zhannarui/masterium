@@ -48,6 +48,26 @@ class UserController{
      const token = generateJwt(req.user.id, req.user.email, req.user.name, req.user.surname)
      return res.json({token})
     }
+
+     async getOne(req, res) {
+        const {id} = req.params
+        if (!id) {
+            return next(ApiError.badRequest('Некорректный id'))
+        }
+
+        const user = await User.findOne({where: {id}})
+        if (!user){
+            return next(ApiError.badRequest('пользователь не найден'))
+        }
+        return res.json({
+            id: user.id,
+            name: user.name,
+            surname: user.surname,
+            email: user.email,
+            createdAt: user.createdAt
+        })
+    }
+
 }
 
 module.exports = new UserController()

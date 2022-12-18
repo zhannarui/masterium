@@ -21,7 +21,4 @@ export const getColors = async (itemId) => {
     return data
 }
 
-export const test = async (test) => {
-    await $host.post()
-}
 

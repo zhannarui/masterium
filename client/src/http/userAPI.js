@@ -1,17 +1,38 @@
-import { $authHost,$host } from ".";
+import { $authHost, $host } from ".";
 import jwt_decode from 'jwt-decode'
+import Cookies from "universal-cookie";
+
 
 
 export const registration = async (name, surname, email, password) => {
     const {data} = await $host.post('api/user/registration', {name, surname, email, password})
-    localStorage.setItem('token', data.token)
+
+    const cookie = new Cookies();
+    cookie.remove('token')
+    cookie.set('token', data.token, {
+        path: '/',
+        maxAge: 60 * 60 * 24,
+        sameSite: 'strict',
+        secure: true
+    })
+    // localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 }
 
 
 export const login = async (email, password) => {
     const {data} = await $host.post('api/user/login', {email, password})
-    localStorage.setItem('token', data.token)
+
+    const cookie = new Cookies()
+    cookie.remove('token')
+    cookie.remove('id')
+    cookie.set('token', data.token, {
+        path: '/',
+        maxAge: 60 * 60 * 24,
+        sameSite: 'strict',
+        secure: true
+    })
+    // localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 }
 
@@ -20,3 +41,8 @@ export const check = async () => {
     localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 } 
+
+export const getUserInformation = async (id) => {
+    const {data} = await $authHost.get('api/user/' + id )
+    return data
+}

@@ -11,6 +11,7 @@ import s from './Home.module.css'
 
 const Home = observer(() =>{
     const {item} = useContext(Context)
+    console.log(item.items)
     useEffect(() => {
         getCategoties().then(data => item.setCategories(data))
         getItems(null).then(data => 

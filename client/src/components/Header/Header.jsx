@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../img/logo.svg";
 import Navbar from "../Navbar/Navbar";
 import s from "./Header.module.css";
@@ -16,18 +16,42 @@ import { AiOutlineClose } from "react-icons/ai";
 import { IoMenuSharp } from "react-icons/io5";
 import MenuBurger from "../MenuBurger/MenuBurger";
 import { useState } from "react";
+import Cookies from "universal-cookie";
+import { getUserInformation } from "../../http/userAPI";
+
 
 const Header = observer(() => {
   const [menuActive, setMenuActive] = useState(false);
+  const location = useLocation()
+  const isHome = location.pathname === HOME_ROUTER
   const { user } = useContext(Context);
   const navigate = useNavigate();
+  let cookie = new Cookies()
   const logOut = () => {
-    user.setUser({});
+    cookie.remove('token')
+    cookie.remove('id')
+    // user.setUser({});
     user.setIsAuth(false);
     navigate(HOME_ROUTER);
   };
+
+  useEffect(() => {
+    const token = cookie.get('token')
+    const id = cookie.get('id')
+    if (token) {
+        console.log('есть токен', token)
+        console.log('есть id', id)
+        user.setIsAuth(true)
+        console.log(user.isAuth)
+        getUserInformation(id).then((data) => {
+            user.setUser(data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+}, [])
   return (
-    <header className={s.header}>
+    <header className={isHome ? s.MainHeader : s.header}>
       <div className={s.container}>
         <div className={s.headerTop}>
           <NavLink to={HOME_ROUTER} className={s.headerTopLogo}>

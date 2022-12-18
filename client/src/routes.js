@@ -1,3 +1,4 @@
+import Modal from "./components/Modal/Modal"
 import AboutUsPage from "./pages/AboutUsPage/AboutUsPage"
 import Auth from "./pages/AuthPage/Auth"
 import BasketPage from "./pages/BasketPage"
@@ -7,14 +8,14 @@ import FavoritePage from "./pages/FavoritePage"
 import Home from "./pages/HomePage/Home"
 import ProductPage from "./pages/ProductPage/ProductPage"
 import UserPage from "./pages/UserPage/UserPage"
-import { ABOUTUSPAGE_ROUTER, BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER, USERPAGE_ROUTER } from "./utils/consts"
+import { ABOUTUSPAGE_ROUTER, BASKETPAGE_ROUTER, CONTACTPAGE_ROUTER, DELIVERYPAGE_ROUTER, FAVORITEPAGE_ROUTER, HOME_ROUTER, LOGIN_ROUTER, MODAL_PAGE, PRODUCTPAGE_ROUTER, REGISTRATION_ROUTER, USERPAGE_ROUTER } from "./utils/consts"
 
-export const authRoutes = [
-{
-    path: FAVORITEPAGE_ROUTER,
-    Component: FavoritePage,
-}
-]
+// export const authRoutes = [
+// {
+//     path: FAVORITEPAGE_ROUTER,
+//     Component: FavoritePage,
+// }
+// ]
 
 export const publicRoutes = [
     {
@@ -52,6 +53,14 @@ export const publicRoutes = [
     {
         path: USERPAGE_ROUTER,
         Component: UserPage,
+    },
+    {
+        path: MODAL_PAGE,
+        Component: Modal,
+    },
+    {    
+    path: FAVORITEPAGE_ROUTER,
+    Component: FavoritePage
     }
 
 ]

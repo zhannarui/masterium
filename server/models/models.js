@@ -72,6 +72,7 @@ Item.hasMany(FavoritesItem)
 FavoritesItem.belongsTo(Item)
 
 
+
 module.exports = {
     User,
     Basket,

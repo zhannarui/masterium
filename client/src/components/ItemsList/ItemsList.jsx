@@ -9,6 +9,7 @@ import s from "./ItemsList.module.css";
 const ItemsList = observer(() => {
   const { item } = useContext(Context);
   const [searchValue, setSearchValue] = useState('')
+ 
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value)
   }

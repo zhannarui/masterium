@@ -24,6 +24,9 @@ const ProductPage = observer(() => {
     getOneItem(id).then((data) => setItem(data));
     getColors(id).then((data) => item.setColors(data));
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, [])
   return (
     <div className={s.container}>
       <div className={s.title}>

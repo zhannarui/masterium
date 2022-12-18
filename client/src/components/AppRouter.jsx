@@ -6,18 +6,18 @@ import { authRoutes, publicRoutes } from "../routes";
 import { HOME_ROUTER } from "../utils/consts";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import MainHeader from "./MainHeader/MainHeader";
 const AppRouter = () => {
     const {user} = useContext(Context)
-    const location = useLocation()
-    const isHome = location.pathname === HOME_ROUTER
+    // const location = useLocation()
+    // const isHome = location.pathname === HOME_ROUTER
     return(
         <div>
-            {isHome ? <MainHeader/> : <Header/>}
+            {/* {isHome ? <MainHeader/> : <Header/>} */}
+        <Header/>
         <Routes>
-            {user.isAuth && authRoutes.map(({path, Component}) =>
+            {/* {user.isAuth && authRoutes.map(({path, Component}) =>
             <Route key={path} path={path} element={<Component/>}/>
-            )}
+            )} */}
              {publicRoutes.map(({path, Component}) =>
             <Route key={path} path={path} element={<Component/>}/>
             )}

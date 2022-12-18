@@ -2,6 +2,7 @@ const ApiError = require("../error/ApiError")
 const { Basket, BasketItem } = require("../models/models")
 
 class BasketController{
+    //какая-то фигня а не код)
     async create (req, res){
         const {userId, basketItems} = req.body
         if (!userId || !Number(userId)){
@@ -35,6 +36,23 @@ class BasketController{
             return next(ApiError.badRequest('корзина не найдена'))
         }
         return res.json(basket)
+    }
+
+    async addItem(req, res){
+        const id = req.params
+        if(!id || Number(id)){
+            return next(ApiError.badRequest('Некорректный id'))
+        }
+        const {itemId, item_count} = req.body
+        const item = BasketItem.create({
+            basketId: id,
+            itemId: itemId,
+            item_count: item_count
+        })
+        if(!item){
+            return next(ApiError.badRequest('Товар не создан'))
+        }
+        return res.json(item)
     }
 }
 
