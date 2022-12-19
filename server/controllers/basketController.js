@@ -1,33 +1,35 @@
 const ApiError = require("../error/ApiError")
-const { Basket, BasketItem } = require("../models/models")
+const { Basket, BasketItem, Colors } = require("../models/models")
 
 class BasketController{
-    //какая-то фигня а не код)
-    async create (req, res){
+    async create (req, res, next){
         const {userId, basketItems} = req.body
         if (!userId || !Number(userId)){
             return next(ApiError.badRequest('Некорректный id пользователя'))
         }
         const basket = await Basket.create({userId})
         if(basketItems){
-            basketItems.forEach(i => 
+            for(const i of basketItems){
+                let colorObj = await Colors.findOne({
+                    where: {name: i.color}
+                })
                 BasketItem.create({
                     basketId: basket.id,
                     itemId: i.itemId,
-                    item_count: i.item_count
-                })
-                )
+                    item_count: i.item_count,
+                    colorid: colorObj.id
+                })} 
         }
         return res.json(basket)
     }
 
-    async getOne (req, res){
+    async getOne (req, res,next){
         let {id} = req.params 
         if (!Number(id)){
             return next(ApiError.badRequest('Некорректный id'))
         }
         const basket = await Basket.findOne({
-            where: {id},
+            where: {userId: id},
             include: [{
                 model: BasketItem,
             }]
@@ -38,21 +40,68 @@ class BasketController{
         return res.json(basket)
     }
 
-    async addItem(req, res){
-        const id = req.params
-        if(!id || Number(id)){
+    async addItem(req, res, next){
+        const {id} = req.params
+        if (!id ){
             return next(ApiError.badRequest('Некорректный id'))
         }
         const {itemId, item_count} = req.body
-        const item = BasketItem.create({
-            basketId: id,
-            itemId: itemId,
-            item_count: item_count
-        })
-        if(!item){
-            return next(ApiError.badRequest('Товар не создан'))
+
+        const basket = await Basket.findOne({where:{userId: id}, include: [{
+                model: BasketItem,
+            }]})
+        if(!basket){
+            return next(ApiError.badRequest('Корзины с таким id не существует'))
         }
-        return res.json(item)
+
+        const itemExist = await BasketItem.findOne({
+            where: {
+                basketId: basket.id,
+                itemId: itemId
+            }
+        })
+
+        if(!itemExist){
+            const item = await BasketItem.create({
+                basketId: id,
+                itemId: itemId,
+                item_count: item_count
+            })
+
+            if (!item){
+                return next(ApiError.badRequest('товар не создан'))
+            }
+        } else {
+            itemExist.update({ item_count: item_count} )
+        }
+        return res.json(basket)
+    }
+
+    async deleteItem(req, res, next){
+        const {basketId, itemId} = req.params
+        if(!basketId || !itemId){
+            return next(ApiError.badRequest('Некорректный id'))
+        }
+        await BasketItem.destroy({
+            where: {
+                basketId: basketId,
+                itemId: itemId
+            }
+        })
+        return res.json(true)
+    }
+
+    async delete(req, next){
+        let {id} = req.params
+        if(!Number(id)){
+            return next(ApiError.badRequest('Некорректный id'))
+        }
+        await BasketItem.destroy({
+            where: {
+                basketId: id
+            }
+        })
+        await Basket.destroy({where: {id}})
     }
 }
 

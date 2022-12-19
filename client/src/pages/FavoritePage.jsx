@@ -1,11 +1,13 @@
-import React from "react";
+import { observer } from "mobx-react-lite";
+import React, { useContext } from "react";
+import { Context } from "..";
 
-const FavoritePage = () =>{
+const FavoritePage = observer(() =>{
     return(
         <div>
-            FavoritePage
+    FavoritePage
         </div>
     )
-}
+})
 
 export default FavoritePage
