@@ -12,7 +12,7 @@ const Categories = observer(() => {
   return (
     <div className={s.main__container}>
       <div className={s.categories__box}>
-        <div className={s.categories__item} onClick={item.items}>
+        <div className={s.categories__item}  onClick={() => item.setSelectedCategory({})}>
           <Link  to={HOME_ROUTER}>Все</Link>
         </div>
         {item.categories.map((category) => (

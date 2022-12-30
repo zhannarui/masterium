@@ -1,0 +1,87 @@
+.orderPageBox {
+    margin: 32px 20px;
+    padding: 30px 20px;
+    background-color: #e3eaf8;
+  }
+
+  .orderPageTitle {
+    font-size: 64px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 130px;
+  }
+  .nullBox {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 30px;
+    align-items: center;
+    margin-bottom: 500px;
+  }
+  
+  .nullBoxLink {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 15px 20px;
+    border-radius: 20px;
+    transition: 0.1s linear;
+  }
+  .nullBoxLink:hover {
+    transform: scale(1.1);
+    transition: 0.1s linear;
+  }
+
+
+  .orderItemBoxText{
+    font-size: 20px;
+  }
+
+  .ItemBoxContainer{
+    border: 1px solid black;
+    padding: 28px 78px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .containerInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .orderItemBox{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .bottomNavbar{
+    display: none;
+  }
+  .itemBox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .item{
+    font-size: 20px;
+  }
+  @media (max-width: 480px){
+    .nullBox{
+        text-align: center;
+    }
+    .nullBoxLink{
+        text-align: center;
+    }
+    .orderPageTitle {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .bottomNavbar{
+        display: block;
+        max-width: 480px;
+      }
+      .ItemBoxContainer{
+        padding: 20px;
+      }
+  }

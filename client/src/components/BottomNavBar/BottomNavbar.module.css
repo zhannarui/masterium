@@ -1,4 +1,4 @@
-.navigation-body{
+.navigationBody{
     position: fixed;
     bottom: 0;
     display: flex;
@@ -24,7 +24,9 @@
     width: 350px;
     justify-content: space-between;
 }
-
+.navigation .notAuth{
+    justify-content: center
+}
 .navigation ul li{
     position: relative;
     width: 70px;
@@ -42,7 +44,7 @@
     text-align: center;
     font-weight: 500;
 }
-.navigation ul li a .navigation-icon{
+.navigation ul li a .navigationIcon{
     position: relative;
     display: block;
     line-height: 75px;
@@ -51,10 +53,10 @@
     transition: 0.5s;
     color: #222327;
 }
-.navigation ul li a .navigation-icon{
+.navigation ul li a .navigationIcon{
     transform: translateY(-10px);
 }
-.navigation ul li a .navigation-text{
+.navigation ul li a .navigationText{
     position: absolute;
     color: #222327;
     font-weight: 400;

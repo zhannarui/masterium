@@ -46,6 +46,27 @@ const Colors = sequelize.define("colors", {
   img: { type: DataTypes.STRING, allowNull: false },
 });
 
+const Order = sequelize.define("order", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  // внешние ключи sequelize подставит сам, когда будем делать связи
+});
+
+const OrderItem = sequelize.define('order_item', {
+  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+  name: {type: DataTypes.STRING},
+  surname: {type: DataTypes.STRING},
+  email: {type: DataTypes.STRING},
+  phone: {type: DataTypes.STRING},
+  address: {type: DataTypes.STRING, allowNull: false},
+  total_price: {type: DataTypes.INTEGER, allowNull: false},
+})
+
+const OrderItemProduct = sequelize.define('order_item_product', {
+  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+  count: {type: DataTypes.INTEGER},
+})
+
+
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
@@ -73,6 +94,21 @@ FavoritesItem.belongsTo(Item);
 Colors.hasMany(BasketItem);
 BasketItem.belongsTo(Colors);
 
+User.hasOne(Order);
+Order.belongsTo(User);
+
+Order.hasMany(OrderItem)
+OrderItem.belongsTo(Order)
+
+OrderItem.hasMany(OrderItemProduct)
+OrderItemProduct.belongsTo(OrderItem)
+
+Item.hasMany(OrderItemProduct)
+OrderItemProduct.belongsTo(Item)
+
+Colors.hasMany(OrderItemProduct)
+OrderItemProduct.belongsTo(Colors)
+
 module.exports = {
   User,
   Basket,
@@ -82,4 +118,7 @@ module.exports = {
   Item,
   Category,
   Colors,
+  Order,
+  OrderItem,
+  OrderItemProduct
 };

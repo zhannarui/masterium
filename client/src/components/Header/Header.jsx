@@ -27,10 +27,10 @@ const Header = observer(() => {
   const { user } = useContext(Context);
   const navigate = useNavigate();
   let cookie = new Cookies()
+  
   const logOut = () => {
     cookie.remove('token')
     cookie.remove('id')
-    // user.setUser({});
     user.setIsAuth(false);
     navigate(HOME_ROUTER);
   };
@@ -76,9 +76,6 @@ const Header = observer(() => {
             <div className={s.iconsBox}>
               <NavLink to={REGISTRATION_ROUTER}>
                 <IoPersonOutline className={s.userIcon} />
-              </NavLink>
-              <NavLink to={BASKETPAGE_ROUTER}>
-                <IoCartOutline className={s.shopCartIcon} />
               </NavLink>
             </div>
           )}

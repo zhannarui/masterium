@@ -6,7 +6,6 @@ export default class ProductStore{
         this._items = []
         this._selectedCategory = {}
         this.__colors = []
-        this.favoritesArray = []
         makeAutoObservable(this)
     }
 

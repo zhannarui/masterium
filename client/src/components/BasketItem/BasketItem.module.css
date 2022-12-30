@@ -1,0 +1,68 @@
+
+.link{
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .item {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 28px 78px;
+    background-color: white;
+    justify-content: space-around;
+  }
+  .img img{
+    width: 126px;
+  }
+  .title {
+    text-align: center;
+    font-size: 20px;
+    width: 240px;
+  }
+  
+  .price {
+    font-size: 20px;
+  }
+  
+  .deleteFromBasket {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .itemsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+  }
+  
+  .deleteFromBasket .crossIcon {
+    transition: 0.1s linear;
+  }
+  
+  .deleteFromBasket:hover .crossIcon {
+    transform: scale(1.1);
+    transition: 0.1s linear;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .counter{
+    font-size: 20px;
+  }
+  
+  @media (max-width: 480px){
+    .item{
+      flex-direction: column;
+      padding: 40px 10px;
+      gap: 30px;
+    }
+    .deleteFromBasket{
+      top: 15px;
+      right: 10px;
+  
+    }
+  }

@@ -15,7 +15,6 @@ export const registration = async (name, surname, email, password) => {
         sameSite: 'strict',
         secure: true
     })
-    // localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 }
 
@@ -32,7 +31,6 @@ export const login = async (email, password) => {
         sameSite: 'strict',
         secure: true
     })
-    // localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 }
 

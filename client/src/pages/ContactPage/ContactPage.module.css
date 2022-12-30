@@ -94,6 +94,7 @@
   .text__block{
     padding-left: 0;
     gap: 35px;
+    width: 95%;
   }
   .item .item__title{
     font-size: 18px;
